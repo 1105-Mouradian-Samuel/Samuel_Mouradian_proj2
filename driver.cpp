@@ -1,6 +1,7 @@
 //Programming Project 2 - Due 11.03.2023
 //Computer Science 219 - Seciton 1001
 //Author - Samuel Mouradian
+//Version - FINAL
 
 
 #include <iostream>
@@ -85,7 +86,7 @@ void ADD_ADDS(ifstream& hexFile, char end){
 
     cout << "        0x" << hex << hexVal1 << "       0x" << hex << hexVal2 << endl;
 
-    cout << "Result:    0x" << hex << (hexVal1 + hexVal2) << endl << endl;
+    cout << "Result:    0x" << hex << hexVal1 + hexVal2 << endl << endl;
 }
 
 void AND_ANDS(ifstream& hexFile, char end){
@@ -96,27 +97,87 @@ void AND_ANDS(ifstream& hexFile, char end){
 
     cout << "        0x" << hex << hexVal1 << "       0x" << hex << hexVal2 << endl;
 
-    cout << "Result:    0x" << hex << (hexVal1 * hexVal2) << endl << endl;
+    cout << "Result:    0x" << hex << (hexVal1 & hexVal2) << endl << endl;
 }
 
 void ASR_ASRS(ifstream& hexFile, char end){
+    long int hexVal1, val1;
 
+    hexFile >> hex >> hexVal1;
+    hexFile >> val1;
+
+    cout << "        0x" << hex << hexVal1 << "       " << val1 << endl;
+
+    if(val1 > 1){
+        for(int i = 0; i < val1; i++){
+            hexVal1 = (hexVal1 >> 1);
+        }
+        cout << "Result:    0x" << hex << hexVal1 << endl << endl;
+    }
+    else if(val1 == 1){
+        cout << "Result:    0x" << hex << (hexVal1 >> val1) << endl << endl;
+    }
 }
 
 void LSR_LSRS(ifstream& hexFile, char end){
+    long int hexVal1, val1;
 
+    hexFile >> hex >> hexVal1;
+    hexFile >> val1;
+
+    cout << "        0x" << hex << hexVal1 << "       " << val1 << endl;
+
+    if(val1 > 1){
+        for(int i = 0; i < val1; i++){
+            hexVal1 = (hexVal1 >> 1);
+        }
+        cout << "Result:    0x" << hex << hexVal1 << endl << endl;
+    }
+    else if(val1 == 1){
+        cout << "Result:    0x" << hex << (hexVal1 >> val1) << endl << endl;
+    }
 }
 
 void LSL_LSLS(ifstream& hexFile, char end){
+    long int hexVal1, val1;
 
+    hexFile >> hex >> hexVal1;
+    hexFile >> val1;
+
+    cout << "        0x" << hex << hexVal1 << "       " << val1 << endl;
+
+    if(val1 > 1){
+        for(int i = 0; i < val1; i++){
+            hexVal1 = (hexVal1 << 1);
+        }
+        cout << "Result:    0x" << hex << hexVal1 << endl << endl;
+    }
+    else if(val1 == 1){
+        cout << "Result:    0x" << hex << (hexVal1 << val1) << endl << endl;
+    }
 }
 
 void NOT_NOTS(ifstream& hexFile, char end){
-    
+    long int hexVal1;
+
+    hexFile >> hex >> hexVal1;
+
+    cout << "        0x" << hex << hexVal1 << endl;
+
+    hexVal1 = hexVal1 - 4294967296;
+
+    cout << "Result:    0x" << hex << ~(hexVal1) << endl << endl;
 }
 
 void ORR_ORRS(ifstream& hexFile, char end){
+    long int hexVal1, hexVal2;
 
+    hexFile >> hex >> hexVal1;
+    hexFile >> hex >> hexVal2;
+
+    cout << "        0x" << hex << hexVal1 << "       0x" << hex << hexVal2 << endl;
+
+    cout << "Result:    0x" << hex << (hexVal1 | hexVal2) << endl << endl;
 }
 
 void SUB_SUBS(ifstream& hexFile, char end){
@@ -131,5 +192,12 @@ void SUB_SUBS(ifstream& hexFile, char end){
 }
 
 void XOR_XORS(ifstream& hexFile, char end){
+    long int hexVal1, hexVal2;
 
+    hexFile >> hex >> hexVal1;
+    hexFile >> hex >> hexVal2;
+
+    cout << "        0x" << hex << hexVal1 << "       0x" << hex << hexVal2 << endl;
+
+    cout << "Result:    0x" << hex << (hexVal1 ^ hexVal2) << endl << endl;
 }
