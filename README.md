@@ -1,7 +1,5 @@
 # Samuel_Mouradian_proj2
-
-
-## Programing Assignment II for Computer Science 219
+Programing Assignment II for Computer Science 219
 
 
 ### How To Run The Code
